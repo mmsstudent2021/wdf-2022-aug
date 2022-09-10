@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+
+        let fruits = {
+            apple : 50,
+            orange : 70,
+            mango : 150,
+            banana : 20
+        };
+
+        function tax(amount,percentage=0.1){
+            return amount * percentage
+        }
+
+        function calcCost(fruitName,quantity){
+            let currentPrice =  fruits[fruitName];
+            let cost =  quantity * currentPrice;
+            let currenttax = tax(cost);
+            return {
+                name : fruitName,
+                quantity,
+                price : currentPrice,
+                tax:currenttax,
+                cost : cost + currenttax
+            }
+        }
+
+        console.log(calcCost("apple",5))
+        console.log(calcCost("orange",3))
+        console.log(calcCost("mango",4))
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // (function(){
+        //     console.log("this is IIFE")
+        // })()
+
+
+        let run = function(a){
+            return "this is run "+a;
+        }
+
+        // console.log(run("aaa"))
+
+
+        function showUnit(value, unitName){
+            return value + unitName;
+        }
+
+
+        // mmk to dollor
+        // 1200mmk = 1$
+        // 1mmk = 1/1200 $
+
+        function dollorToMmk(amount = 0){
+            console.log(amount);
+            let exchangeRate = 1200;
+            let result = amount/exchangeRate;
+            return  showUnit(result,"$");
+        }
+
+        console.log(dollorToMmk(500000))
+        console.log(dollorToMmk(30000))
+        console.log(dollorToMmk(11500000))
+
+
+        // calc aera
+        // w,h 
+        // 20ft 50ft = area ??
+        
+        
+        function findRoomArea(width,breadth){
+            let result = width * breadth;
+            return  showUnit(result, "sqft");
+        }
+
+        console.log(findRoomArea(20,50));
+        console.log(findRoomArea(50,50));
+        console.log(findRoomArea(25,50));
+        console.log(findRoomArea(12,50));
+
+
+        //inches to feet
+        // 12 inches = 1 feet
+
+        // 50" = ? ft 
+        // formula input/12
+
+        function findFt(inches){
+            return inches/12 + " ft";
+        }
+
+        // console.log(findFt(50));
+        // console.log(findFt(150));
+        // console.log(findFt(250));
+        // console.log(findFt(500));
+
+
+
+        // let name = "hein htet zan";
+        // console.log(name);
+
+        // let x = 5;
+        // let y = 10;
+        // console.log(x+y)
+
+
+        // console.log(x > y)
+
+        //function
+
+        // let name = "hhz";
+
+        // console.log(name)
+
+        // function show(){
+        //     console.log("apple");
+        //     console.log("orange");
+        //     console.log("mango");
+
+        //     return ;
+
+        //     console.log("hello")
+
+        // }
+
+        // console.log(show())
+
+   
+
+        
+        
+
+
+    </script>
+</body>
+</html>

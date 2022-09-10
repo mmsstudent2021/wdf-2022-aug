@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+
+        let results = [];
+        let start = 0;
+
+        function showResult(w,b,r){
+            let resultObject = {
+                width : w,
+                breadth : b,
+                result : r
+            };
+
+            // results.push(resultObject)
+            results[start] = resultObject;
+            start++;
+
+            return resultObject;
+        }
+
+        function calcArea(width,breadth){
+            let area = width * breadth;
+            let result = area + " sqft";
+            // return `${width}ft * ${breadth}ft = ${result}`;
+            return showResult(width,breadth,result)
+        }
+
+
+        calcArea(20,40)
+        calcArea(25,45)
+        calcArea(50,100)
+
+        // console.log(calcArea(20,40))
+        // console.log(calcArea(25,45))
+        // console.log(calcArea(50,100))
+        // console.log(calcArea(12,50))
+        // console.log(calcArea(25,25))
+        // console.log(calcArea(25,25))
+
+        console.table(results);
+
+
+
+    </script>
+    
+</body>
+</html>

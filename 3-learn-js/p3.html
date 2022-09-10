@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let rates = {
+            mmk : 1,
+            sgd : 1500,
+            eur : 2119,
+            usd : 2100
+        }
+
+        // 1usd = 2100 mmk
+        // 1mmk = 1/2100 usd
+
+        // 500 usd => ?? mmk
+        // 500 * 2100 mmk
+
+
+        // 100000mmk
+        // 100000mmk = ???usd
+
+        function toMmk(amount,fromCurrency){
+            let rate = rates[fromCurrency];
+            let result = amount * rate;
+
+            return result + "mmk";
+        }
+
+        console.log(toMmk(500,'usd'))
+
+        console.log(fromMmk(500000,'usd'))
+
+
+        function fromMmk(amount,toCurrency){
+            let rate = 1/rates[toCurrency];
+            let result = amount * rate;
+            return result + toCurrency;
+
+        }
+
+        // console.log(fromMmk(100000,'usd'))
+
+        // anyCurrency to anyCurrency
+        // usd to eur
+        // 1. usd to mmk
+        // 2. mmk to eur
+
+        function exchange(amount,from,to){
+            let mmk = toMmk(amount,from)
+            // console.log(mmk)
+            let toCurrency = fromMmk(parseFloat(mmk),to)
+            // console.log(toCurrency)
+            return {
+                from : amount + from,
+                to : toCurrency
+            };
+        }
+
+        console.log(exchange(100,'usd','eur'))
+        console.log(exchange(250,'sgd','eur'))
+        console.log(exchange(230,'eur','usd'))
+
+
+
+    
+
+
+
+
+    </script>
+</body>
+</html>
